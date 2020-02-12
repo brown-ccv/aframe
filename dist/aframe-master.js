@@ -1,7 +1,3 @@
-/* eslint no-undef: "off"*/
-/* eslint no-restricted-globals: 1 */
-/* eslint no-unused-expressions: 1 */
-
 (function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.AFRAME = f()}})(function(){var define,module,exports;return (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(_dereq_,module,exports){
 var str = Object.prototype.toString
 
@@ -78189,7 +78185,6 @@ module.exports.AScene = registerElement('a-scene', {
           alpha: true,
           antialias: !isMobile,
           canvas: this.canvas,
-		  context: this.context,
           logarithmicDepthBuffer: false
         };
 
@@ -78463,7 +78458,7 @@ function setupCanvas (sceneEl) {
   var canvasEl;
 
   canvasEl = document.createElement('canvas');
-  var contextEl = canvasEl.getContext('webgl2');
+  // var contextEl = canvasEl.getContext('webgl2');
   canvasEl.classList.add('a-canvas');
   // Mark canvas as provided/injected by A-Frame.
   canvasEl.dataset.aframeCanvas = true;
@@ -78479,7 +78474,7 @@ function setupCanvas (sceneEl) {
 
   // Set canvas on scene.
   sceneEl.canvas = canvasEl;
-  sceneEl.context = contextEl;
+  // sceneEl.context = contextEl;
   sceneEl.emit('render-target-loaded', {target: canvasEl});
   // For unknown reasons a synchronous resize does not work on desktop when
   // entering/exiting fullscreen.
@@ -80313,7 +80308,7 @@ _dereq_('./core/a-mixin');
 _dereq_('./extras/components/');
 _dereq_('./extras/primitives/');
 
-console.log('A-Frame Version: 1.0.3 (Date 2020-01-23, Commit #0cd39be3)');
+console.log('A-Frame Version: 1.0.3 (Date 2020-02-12, Commit #16ee68d2)');
 console.log('three Version (https://github.com/supermedium/three.js):',
             pkg.dependencies['super-three']);
 console.log('WebVR Polyfill Version:', pkg.dependencies['webvr-polyfill']);

@@ -862,7 +862,7 @@ function setupCanvas (sceneEl) {
   var canvasEl;
 
   canvasEl = document.createElement('canvas');
-  var contextEl = canvasEl.getContext('webgl2');
+  // var contextEl = canvasEl.getContext('webgl2');
   canvasEl.classList.add('a-canvas');
   // Mark canvas as provided/injected by A-Frame.
   canvasEl.dataset.aframeCanvas = true;
@@ -878,7 +878,7 @@ function setupCanvas (sceneEl) {
 
   // Set canvas on scene.
   sceneEl.canvas = canvasEl;
-  sceneEl.context = contextEl;
+  // sceneEl.context = contextEl;
   sceneEl.emit('render-target-loaded', {target: canvasEl});
   // For unknown reasons a synchronous resize does not work on desktop when
   // entering/exiting fullscreen.
